@@ -1,0 +1,46 @@
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-dark
+    a.navbar-brand.text-white(href='#') Navbar
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.active
+          a.nav-link.text-white(href='#')
+            | Home 
+            span.sr-only (current)
+        li.nav-item
+          a.nav-link.text-white(href='/food') 美食
+        li.nav-item
+          a.nav-link.text-white(href='/food') 優惠
+        li.nav-item.dropdown
+          a#navbarDropdownMenuLink.nav-link.dropdown-toggle.text-white(href='/movie', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') 電影
+          .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+            a.dropdown-item(href='/movie') 即將上映
+            a.dropdown-item(href='/movie') 已上映
+        li.nav-item.dropdown
+          a#navbarDropdownMenuLink.nav-link.dropdown-toggle.text-white(href='/movie', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') 人物
+          .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+            a.dropdown-item(href='/people') 公眾人物
+            a.dropdown-item(href='/postPeople') 新增
+        li.nav-item
+          a.nav-link.disabled.text-white(href='#') Disabled
+        li.nav-item.dropdown
+          a#navbarDropdownMenuLink.nav-link.dropdown-toggle.text-white(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') 遊戲
+          .dropdown-menu(aria-labelledby='navbarDropdownMenuLink')
+            a.dropdown-item(href='#') PC
+            a.dropdown-item(href='#') PS4
+            a.dropdown-item(href='#') XBOX
+      button#loginButton.btn.btn-outline-success.my-2.my-sm-0(type='button' onclick="LoginClick()") Login
+      button#logoutButton.btn.btn-outline-info.my-2.my-sm-0(type='button' onclick="LogoutClick()") Logout
+
+#id01.modal(style="display='none'")
+  form.modal-content(action="/login" method="POST")
+    label.m-3(for='account') Account:
+    input#account.form-control(placeholder='Account', type='text' name="account")
+    label.m-3(for='password' name=) Password
+    input#password.form-control(placeholder='Password', type='password' name="password")
+    .fb-login-button(data-max-rows='1', data-size='large', data-button-type='continue_with', data-show-faces='false', data-auto-logout-link='true', data-use-continue-as='false',onlogin="FBLoginClick()",scope="id,name,birthday,email")
+    //.fb-login-button(data-max-rows='1', data-size='large', data-button-type='continue_with', data-show-faces='false', data-auto-logout-link='true', data-use-continue-as='false',onlogin="FBLoginClick()")
+    button.mx-3.my-3.btn.btn-primary.btn-lg(type='submit') Sign in
+        

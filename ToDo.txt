@@ -1,0 +1,6 @@
+
+
+
+mongodb 存入 FB_id
+peopel FB 大頭貼
+people 拉到底時ajax 

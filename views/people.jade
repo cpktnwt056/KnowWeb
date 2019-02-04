@@ -1,0 +1,27 @@
+extends layout
+
+block files
+    link(href='/css/people.css', rel='stylesheet')
+
+block navbar
+    include ./nav.jade  
+  
+block content
+    .jumbotron.jumbotron-fluid
+        h1  hello
+    .container
+        ul.list-group
+                each post,i in posts
+                    li.list-group-item.mb-5
+                        .media
+                            img.mr-3(alt="Photo")
+                            .media-body
+                                p.position-relative #{post['name']}
+                                    span.position-absolute(style="right:8px") #{post['created_time']}
+                        .content
+                            if post['story']
+                                p #{post['story']}
+                            if post['message']
+                                p #{post['message']}
+
+  

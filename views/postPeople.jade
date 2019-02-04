@@ -1,0 +1,22 @@
+extends layout
+
+block navbar
+    include ./nav.jade
+
+block content
+    .row
+        .col-md-3
+        .col-md-6
+            form(action='/postPeople', method='POST')
+                h4 新增人物
+                .form-group
+                    | 網站
+                    select(name='site')
+                        option(value='FB')  FB
+                        option(value='Twitter')  Twitter
+                .form-group
+                    | 名稱: 
+                    input(type='text', name='name')
+                button.btn.btn-primary(type='submit') Submit
+        .col-md-3
+    
